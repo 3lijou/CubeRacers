@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site de Speedcubing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles CSS pour le site web */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.7;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            background-color: #343a40;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #007bff;
+        }
+        .section p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        .cta-button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .contact-form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+        }
+        .contact-form textarea {
+            resize: vertical;
+            height: 120px;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 1px solid #444;
+        }
+        #services-list {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        #services-list li {
+             margin-bottom: 10px;
+        }
+        .besoins-buttons { /* Ajout de la classe pour le style des boutons */
+            display: flex;
+            justify-content: center; /* Centre les boutons horizontalement */
+            gap: 20px; /* Ajoute de l'espace entre les boutons */
+            margin-bottom: 20px; /* Ajoute de l'espace en dessous des boutons */
+        }
+        .besoins-button { /* Style pour les boutons "J'ai un problème" et "Je veux apprendre" */
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+            cursor: pointer; /* Change le curseur au survol pour indiquer que c'est cliquable */
+            border: none; /* Supprime la bordure par défaut des boutons */
+        }
+        .besoins-button:hover {
+            background-color: #0056b3;
+        }
+        .besoins-details {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .sub-besoins-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .sub-besoins-button{
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .sub-besoins-button:hover{
+             background-color: #45a049;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul li {
+                margin-bottom: 10px;
+            }
+             header h1{
+               font-size: 2em;
+            }
+            .section h2{
+                font-size: 1.5em;
+            }
+            .besoins-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mon Site de Speedcubing</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#besoins">Vos Besoins</a></li> <li><a href="#services">Mes Services</a></li>
+            <li><a href="#apropos">À Propos</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <section id="accueil" class="section">
+            <h2>Bienvenue sur mon site de Speedcubing !</h2>
+            <p>Salut ! Je m'appelle [Ton prénom] et je suis passionné de speedcubing. Je propose des cours pour les élèves du collège [Nom de ton collège] qui souhaitent apprendre à résoudre le Rubik's Cube rapidement. Que tu sois débutant ou que tu veuilles te perfectionner, je suis là pour t'aider !</p>
+            <a href="#contact" class="cta-button">Inscris-toi à un cours</a>
+        </section>
+        <section id="besoins" class="section"> <h2>Quels sont tes besoins ?</h2>
+            <p>Pour que je puisse te proposer les cours les plus adaptés, dis-moi ce que tu recherches :</p>
+            <div class="besoins-buttons">
+                <button class="besoins-button" id="probleme">J'ai besoin d'aide</button>
+                <button class="besoins-button" id="apprendre">Je veux apprendre</button>
+            </div>
+            <div id="probleme-details" class="besoins-details">
+                <p>Précise ton problème :</p>
+                <div class="sub-besoins-buttons">
+                    <button class="sub-besoins-button" id="probleme-casse">Mon Rubik's Cube est cassé</button>
+                    <button class="sub-besoins-button" id="probleme-algo">Je n'arrive pas à faire un algorithme</button>
+                     <button class="sub-besoins-button" id="probleme-competition">Je veux m'inscrire à une compétition</button>
+                    <button class="sub-besoins-button" id="probleme-autre">Autre problème</button>
+                </div>
+                <form class="besoins-form" id="probleme-form">
+                    <label for="probleme-type">Type de problème :</label>
+                    <select id="probleme-type" name="probleme-type">
+                        <option value="casse">Mon Rubik's Cube est cassé</option>
+                        <option value="algo">Je n'arrive pas à faire un algorithme</option>
+                        <option value="competition">Je veux m'inscrire à une compétition</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                    <label for="probleme-description">Description du problème :</label>
+                    <textarea id="probleme-description" name="probleme-description" placeholder="Décris ton problème en détail..."></textarea>
+                    <button type="submit" class="cta-button">Envoyer</button>
+                </form>
+            </div>
+            <div id="apprendre-details" class="besoins-details">
+                <p>Que veux-tu apprendre ?</p>
+                 <div class="sub-besoins-buttons">
+                    <button class="sub-besoins-button" id="apprendre-debutant">Les bases</button>
+                    <button class="sub-besoins-button" id="apprendre-avance">Techniques avancées</button>
+                    <button class="sub-besoins-button" id="apprendre-vitesse">Améliorer ma vitesse</button>
+                </div>
+                <form class="besoins-form" id="apprendre-form">
+                    <label for="niveau">Ton niveau :</label>
+                    <select id="niveau" name="niveau">
+                        <option value="debutant">Débutant</option>
+                        <option value="intermediaire">Intermédiaire</option>
+                        <option value="avance">Avancé</option>
+                    </select>
+                    <label for="objectifs">Tes objectifs :</label>
+                    <textarea id="objectifs" name="objectifs" placeholder="Par exemple : Apprendre les bases, améliorer ma vitesse, participer à des compétitions..."></textarea>
+                    <button type="submit" class="cta-button">Envoyer</button>
+                </form>
+            </div>
+        </section>
+        <section id="services" class="section">
+            <h2>Mes Services</h2>
+            <ul id="services-list">
+                <li><strong>Cours d'initiation :</strong> Apprends les bases du Rubik's Cube et les premières étapes pour le résoudre.</li>
+                <li><strong>Cours de perfectionnement :</strong> Améliore ta vitesse et apprends des techniques avancées (CFOP, etc.).</li>
+                 <li><strong>Conseils personnalisés :</strong> Bénéficie de conseils adaptés à ton niveau et à tes objectifs.</li>
+                <li><strong>Séances de pratique en groupe :</strong> Entraîne-toi avec d'autres passionnés et partage tes astuces.</li>
+            </ul>
+        </section>
+        <section id="apropos" class="section">
+            <h2>À Propos de moi</h2>
+            <p>Je pratique le speedcubing depuis [Nombre] années et j'ai participé à plusieurs compétitions amicales. J'adore partager ma passion et aider les autres à découvrir le plaisir de résoudre le Rubik's Cube rapidement. Je suis patient, pédagogue, et je m'adapte à chaque élève pour lui proposer un accompagnement personnalisé.</p>
+        </section>
+        <section id="contact" class="section">
+            <h2>Contacte-moi</h2>
+            <p>Pour t'inscrire à un cours ou pour toute question, n'hésite pas à me contacter en remplissant le formulaire ci-dessous :</p>
+            <form class="contact-form">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit" class="cta-button">Envoyer</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Mon Site de Speedcubing | Tous droits réservés</p>
+    </footer>
+    <script>
+        // Vous pouvez ajouter du code JavaScript ici pour des fonctionnalités interactives
+        // Par exemple, pour afficher un message de confirmation après l'envoi du formulaire :
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (event) => {
+                event.preventDefault(); // Empêche le formulaire de se recharger
+                alert('Merci pour ton message ! Je te répondrai bientôt.');
+                contactForm.reset(); // Efface le formulaire après l'envoi
+            });
+        }
+
+        const problemeButton = document.getElementById('probleme');
+        const apprendreButton = document.getElementById('apprendre');
+        const problemeDetails = document.getElementById('probleme-details');
+        const apprendreDetails = document.getElementById('apprendre-details');
+        const besoinsForms = document.querySelectorAll('.besoins-form');
+        const problemeForm = document.getElementById('probleme-form');
+        const apprendreForm = document.getElementById('apprendre-form');
+        const problemeCasseButton = document.getElementById('probleme-casse');
+        const problemeAlgoButton = document.getElementById('probleme-algo');
+        const problemeAutreButton = document.getElementById('probleme-autre');
+        const problemeCompetitionButton = document.getElementById('probleme-competition');
+        const apprendreDebutantButton = document.getElementById('apprendre-debutant');
+        const apprendreAvanceButton = document.getElementById('apprendre-avance');
+        const apprendreVitesseButton = document.getElementById('apprendre-vitesse');
+
+
+        if (problemeButton && apprendreButton && problemeDetails && apprendreDetails) {
+            problemeButton.addEventListener('click', (event) => {
+                event.preventDefault(); // Empêche le comportement par défaut du bouton
+                problemeDetails.style.display = 'block'; // Affiche le formulaire "Problème"
+                apprendreDetails.style.display = 'none'; // Cache le formulaire "Apprendre"
+            });
+
+            apprendreButton.addEventListener('click', (event) => {
+                event.preventDefault(); // Empêche le comportement par défaut du bouton
+                apprendreDetails.style.display = 'block'; // Affiche le formulaire "Apprendre"
+                problemeDetails.style.display = 'none'; // Cache le formulaire "Problème"
+            });
+
+            problemeCasseButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                problemeForm.style.display = 'block';
+                document.getElementById('probleme-type').value = 'casse';
+            });
+
+            problemeAlgoButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                problemeForm.style.display = 'block';
+                 document.getElementById('probleme-type').value = 'algo';
+            });
+
+            problemeCompetitionButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                problemeForm.style.display = 'block';
+                document.getElementById('probleme-type').value = 'competition';
+            });
+
+             problemeAutreButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                problemeForm.style.display = 'block';
+                 document.getElementById('probleme-type').value = 'autre';
+            });
+
+            apprendreDebutantButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                apprendreForm.style.display = 'block';
+                document.getElementById('niveau').value = 'debutant';
+            });
+
+            apprendreAvanceButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                apprendreForm.style.display = 'block';
+                document.getElementById('niveau').value = 'avance';
+            });
+
+            apprendreVitesseButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                apprendreForm.style.display = 'block';
+                document.getElementById('niveau').value = 'intermediaire';
+            });
+
+
+            besoinsForms.forEach(form => {
+                form.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    let message = "Merci ! Voici tes besoins : ";
+                    if (form.id === "probleme-form") {
+                        const problemeType = document.getElementById('probleme-type').value;
+                        const problemeDescription = document.getElementById('probleme-description').value;
+                        message += `Problème - Type: ${problemeType}, Description: ${problemeDescription}`;
+                    } else if (form.id === "apprendre-form") {
+                        const niveau = document.getElementById('niveau').value;
+                        const objectifs = document.getElementById('objectifs').value;
+                        message += `Niveau - ${niveau}, Objectifs - ${objectifs}`;
+                    }
+                    alert(message);
+                    form.reset();
+                    problemeDetails.style.display = 'none';
+                    apprendreDetails.style.display = 'none';
+                    problemeForm.style.display = 'none';
+                    apprendreForm.style.display = 'none';
+                });
+            });
+        }
+    </script>
+</body>
+</html>
